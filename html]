@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #183C63;
+            color: #FFFFFF;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px 16px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        main {
+            background-color: #FFFFFF;
+            color: #183C63;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px 16px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .artigo-autor {
+            font-weight: bold;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        main img {
+            max-width: 100%;
+            height: auto;
+            margin: 16px 0;
+            border-radius: 4px;
+        }
+
+        .acoes {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        button {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>   
+        <h1>MARCELINHO METEBALA É UMA DAS GRANDES OBRAS MUSICAIS DESSE ANO</h1>
+        <p>God bless esse dj carioca</p>
+    </header>
+
+    <main>
+        <article>
+            <h2>Meu primeiro post</h2>
+            <p class="artigo-autor">Por: Marcelo Paludetto</p>
+            <p>Marcelinho MeteBala realmente é o Marcelinho MeteBala? Não se sabe, uma vez que a escassez de informações sobre esse nome está no mesmo nível de seu talento. No campo de busca do X/Twitter, o que mais aparece são pessoas relatando como foram fisgadas por Quebradeira Pura através dos algoritmos do YouTube, visto até então como um set ou algo do tipo. No Bandcamp, a obra surge no formato de um disco aparentemente regular, com tags que delimitam, em parte, o que está por trás do som: acid, drum and bass e jungle.</p>
+            
+            <img src="imagens/download.jpeg" alt="Capa do álbum de Marcelinho MeteBala">
+        </article>
+
+        <div class="acoes">
+            <button type="button">❤️ <span>0</span></button>
+            <button type="button">💬 <span>0</span></button>
+        </div>
+    </main>
+
+    <script>
+        const botoes = document.querySelectorAll("button");
+
+        function botaoClicado(event) {
+            const botao = event.currentTarget;
+            const contador = botao.querySelector("span");
+            let valorAtual = parseInt(contador.textContent, 10);
+            contador.textContent = valorAtual + 1;
+        }
+
+        botoes.forEach(function(botao) {
+            botao.addEventListener("click", botaoClicado);
+        });
+    </script>
+
+</body>
+</html>
